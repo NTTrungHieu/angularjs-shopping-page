@@ -1,0 +1,93 @@
+  <div class="container">
+        <h2 class="text-center">THANH TOÁN</h2>
+            <table class="table"  >
+                <tr class="text-center">
+                  <th>STT</th>
+                  <th>Ảnh minh hoạ</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Số lượng</th>
+                  <th>Đơn Giá</th>
+                  <th>Thành tiền</th>
+                  <th></th>
+                </tr>
+                  <tr class="text-center tf" ng-repeat="item in cart " ng-init="thanhtien(item)">
+                    <td>{{item.id+1}}</td>
+                    <td><img class="" width="20%" ng-src="../images/{{item.image}}"></td>
+                    <td><label>{{item.name}}</label></td>
+                    <td><input type="number" min="1" ng-model="item.quantity" ng-change="thanhtien(item)" /></td>
+                    <td>{{item.price | number:0}} vnđ</td>
+                    <td >{{item.thanhtien | number:0}} vnđ</td>
+                    <td><button class="btn btn-danger" ng-click="delete(item)">Xoá</button></td>
+                  </tr>
+                <tr>
+                  <th colspan="4">Tổng tiền:</th>
+                  <td colspan="2" >{{sum | number:0}} vnđ</td>
+                </tr>
+            </table>
+
+        <form action="" id="" class="w-50 mx-auto"  >
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                </div>
+                <input type="text" ng-model="name1" class="form-control" placeholder="Tên của bạn" required>
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                </div>
+                <input type="email" ng-model="email1" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-address-book" aria-hidden="true"></i></span>
+                </div>
+                <input type="text" ng-model="diachi1" class="form-control" placeholder="địa chỉ" required>
+            </div>      
+            <div class="form-group text-center">
+                <a class="btn btn-primary text-light" data-toggle="modal" data-target="#myModal2" class="btn btn-primary">Thanh toán</a>
+                <button type="reset" class="btn btn-primary">Nhập lại</button>
+            </div>
+        </form>
+</div>
+<!-- The Modal -->
+<div class="modal" id="myModal2">
+  <div class="modal-dialog w-50 mw-100">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">THANH TOÁN THÀNH CÔNG</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        Tên: {{name1}}<br>
+        Email: {{email1}}<br>
+        Địa chỉ: {{diachi1}}<br>
+        Sản phẩm: <br>
+        <table class="text-center w-100">
+        <tr>
+          <th>STT</th>
+          <th>Tên</th>
+          <th>Số lượng</th>
+          <th>đơn giá</th>
+          <th>thành tiền</th>
+        </tr>
+        <tr ng-repeat="item in cart" ng-init="thanhtien(item)">
+          <td>{{item.id+1}}</td>  
+          <td>{{item.name}}</td>  
+          <td>{{item.quantity}}</td>  
+          <td>{{item.price| number:0}}VNĐ</td>  
+          <td>{{item.thanhtien| number:0}}VNĐ</td>  
+        </tr>
+        <th colspan="2">Tổng tiền:</th> <td colspan="2"></td>
+        <th colspan="1">{{sum | number:0}}VNĐ</th>
+      </table>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" ng-click="pay()" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

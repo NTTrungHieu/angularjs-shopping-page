@@ -1,0 +1,79 @@
+
+Body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin: auto;
+    padding: 0px;
+}
+.header{
+    position:fixed;
+    top: 0;
+    width: 100%;
+}
+.row{
+    margin: 0 !important;
+}
+.chuchay{
+    font-size: 1em; 
+    background-color: pink; 
+    color: rgb(44, 39, 39);
+}
+.collapse>.navbar-nav>.nav-item>.menu_chu{
+    font-size: 1em;
+    margin-left: 2.5em;
+    margin-top: 7px;
+    font-weight: bold;
+
+}
+.collapse>.navbar-nav>.nav-item>.chu_phai{
+    font-size: 1em;
+    margin-left: 2.5em;
+    margin-top: 7px;
+    font-weight: bold;
+    color: black;
+
+}
+#chu{
+    color: rgb(253, 149, 166);
+    
+    
+}
+#chu:hover{
+    color: plum;
+}
+#LOGO{
+    font-family: 'Lobster', cursive;
+    color: black;
+    font-size: 2em;
+    margin-right: 3em;
+}
+.sanpham{
+    float:left;
+}
+.sanpham>ul>li{
+    list-style: none;
+    position: relative;
+    font-weight: bold;
+}
+.sanpham>ul>li>a{
+    text-decoration: none;
+    color: black;
+}
+#gia{
+    font-weight: normal;
+    color: palevioletred;
+}
+#anhtruoc{
+    position: relative;
+}
+#anhtruoc:hover{
+    opacity: 0;
+    transition-duration: 0.5s;
+    
+}
+#anhsau{
+    position: absolute;
+    top:0px;
+    left:0px;
+    
+}
